@@ -1,16 +1,8 @@
 import { Component } from "react";
 import Movie from "./components/Movie";
+import RangeInput from "./components/Filter/Range";
 import axios from "axios";
-// function App() {
-//   const [count, setCount] = useState(0);
-//   return (
-//     <div className="App">
-//       <button onClick={() => setCount(count - 1)}>минус</button>
-//       <span>{count}</span>
-//       <button onClick={() => setCount(count + 1)}>плюс</button>
-//     </div>
-//   );
-// }
+
 class App extends Component {
   state = {
     isloading: true,
@@ -32,25 +24,30 @@ class App extends Component {
     const { isloading, movies } = this.state;
     console.log(movies);
     return (
-      <div>
-        {isloading ? (
-          "получаю данные"
-        ) : (
-          <div className="movie__app">
-            {movies.map((e) => (
-              <Movie
-                key={e.id}
-                title={e.title}
-                image={e.medium_cover_image}
-                year={e.year}
-                rating={e.rating}
-                genres={e.genres}
-                full={e.description_full}
-                torrents={e.torrents}
-              />
-            ))}
-          </div>
-        )}
+      <div className="app">
+        <section className="filter">
+          <RangeInput />
+        </section>
+        <section className="movie__app">
+          {isloading ? (
+            "получаю данные"
+          ) : (
+            <>
+              {movies.map((e) => (
+                <Movie
+                  key={e.id}
+                  title={e.title}
+                  image={e.medium_cover_image}
+                  year={e.year}
+                  rating={e.rating}
+                  genres={e.genres}
+                  full={e.description_full}
+                  torrents={e.torrents}
+                />
+              ))}
+            </>
+          )}
+        </section>
       </div>
     );
   }
