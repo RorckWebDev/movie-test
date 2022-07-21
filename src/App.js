@@ -45,6 +45,8 @@ class App extends Component {
                 year={e.year}
                 rating={e.rating}
                 genres={e.genres}
+                full={e.description_full}
+                torrents={e.torrents}
               />
             ))}
           </div>

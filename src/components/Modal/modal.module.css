@@ -1,0 +1,43 @@
+.root {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-top-right-radius: 25px;
+  background-color: rgba(0, 0, 0, 0.7);
+  overflow-y: auto;
+  padding-bottom: 50px;
+  z-index: 19999;
+}
+.full {
+  margin-top: 50px;
+  color: whitesmoke;
+  padding: 10px;
+}
+.list {
+  position: absolute;
+  top: 55px;
+  left: 0;
+  right: 0;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+}
+.title {
+  margin: 0;
+  height: 50px;
+  padding-left: 15px;
+  display: flex;
+  align-items: center;
+}
+.link {
+  padding: 15px;
+  background-color: rgb(99, 182, 74);
+  text-decoration: none;
+  color: black;
+}
